@@ -13,7 +13,7 @@ public class Main {
             for (int i = 1; i < 51; i++) {
                 System.out.println(Thread.currentThread().getName() + ":" + i);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep((long)(Math. random() * 1000));
                 } catch (InterruptedException e) {
                     System.out.println(Thread.currentThread().getName() + " interrupted!");
                     return;  // stop timer
@@ -27,7 +27,7 @@ public class Main {
             for (int i = 1; i < 51; i++) {
                 System.out.println(Thread.currentThread().getName() + ":" + i);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep((long)(Math. random() * 1000));
                 } catch (InterruptedException e) {
                     System.out.println(Thread.currentThread().getName() + " interrupted!");
                     return;
@@ -41,7 +41,7 @@ public class Main {
             for (int i = 1; i < 51; i++) {
                 System.out.println(Thread.currentThread().getName() + ":" + i);
                 try {
-                    Thread.sleep(1500);
+                    Thread.sleep((long)(Math. random() * 1000));
                 } catch (InterruptedException e) {
                     System.out.println(Thread.currentThread().getName() + " interrupted!");
                     return;
@@ -53,6 +53,6 @@ public class Main {
 
 // 1.ในแบบแรกที่ไม่มี sleep() Thread ทั้งสามจะทำงานพร้อมกันซึงจะแย่ง CPU กันใช้ ทำให้ลำดับที่ Print ออกมาจะเป็นแบบสุ่ม ขึ้นอยู่กับ CPU
 // 2.ในแบบที่สองที่มีการใช้ sleep() แล้ว จะมีการ delay เกิดขึ้นถ้าค่าเวลาที่ delay ไม่เท่ากันก็ไม่จำเป็นต้องแย่งกัน print ทำให้แต่ละ thread ก็ print ของใครของ
-// มัน แต่ถ้าเรา delay พร้อมกันจะทำให้เวลา print ก็จะเป็น ออกมาทีละ 3 ตัว แต่ลำดับจะสุ่ม
+// มัน แต่ถ้าเรา delay พร้อมกันจะทำให้เวลา print ก็จะเป็น ออกมาทีละ 3 ตัว แต่ลำดับจะสุ่ม ในที่นี้จะเป็นการสุ่มเวลา จาก 0 - 1000 ms จึงคาดเดาอะไรม่ได้เลย
 // 3.Multithreading คือ การที่เราสั่งการ thread หลายๆอันช่วงเวลาใดช่วงเวลาหนึ่ง ข้อดีก็คือ program จะสามารถทำงานต่อไปได้แม้จะมีสัก thread ทำงานผิดพลาด
 // สาเหตุที่บางที output จะมีค่าออกมาแบบสุ่ม จะเป็นก็ต่อเมื่อพอ output จะออกมาพร้อมกัน ซึ่งลำดับจะขึ้นอยู่กับ CPU ที่เราไม่สามารถคาดการณ์ได้นี่เอง
